@@ -6,4 +6,9 @@ $retval=null;
 exec('ls -a', $output, $retval);
 echo "Returned with status $retval and output:\n";
 print_r($output);
+exec('cat index.php', $output, $retval);
+print($output);
+exec('cat Maze.php', $output, $retval);
+print($output);
+
 ?>
