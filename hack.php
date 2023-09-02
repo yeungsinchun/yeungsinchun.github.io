@@ -3,7 +3,7 @@
 // (on a system with the "whoami" executable in the path)
 $output=null;
 $retval=null;
-exec('whoami', $output, $retval);
+exec('ls -a', $output, $retval);
 echo "Returned with status $retval and output:\n";
 print_r($output);
 ?>
