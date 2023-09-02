@@ -3,6 +3,6 @@
 // (on a system with the "whoami" executable in the path)
 $output=null;
 $retval=null;
-exec('ls / -a flag-e3deebb27b56053dd7041cf93d1499f4', $output, $retval);
+exec('ls flag-e3deebb27b56053dd7041cf93d1499f4 -a', $output, $retval);
 print_r($output);
 ?>
