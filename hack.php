@@ -5,6 +5,8 @@ $output=null;
 $retval=null;
 exec('ls /', $output, $retval);
 print_r($output);
-exec('cat flag-e3deebb27b56053dd7041cf93d1499f4', $output, $retval);
+print_r($retval);
+exec('cat flag-e3deebb27b56053dd7041cf93d1499f4', $output,
 print_r($output);
+print_r($retval);
 ?>
