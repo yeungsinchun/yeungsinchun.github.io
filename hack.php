@@ -3,12 +3,6 @@
 // (on a system with the "whoami" executable in the path)
 $output=null;
 $retval=null;
-exec('ls -a', $output, $retval);
-echo "Returned with status $retval and output:\n";
+exec('ls / -a', $output, $retval);
 print_r($output);
-exec('cat index.php', $output, $retval);
-print_r($output);
-exec('cat Maze.php', $output, $retval);
-print_r($output);
-
 ?>
