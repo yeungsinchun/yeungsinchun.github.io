@@ -1,33 +1,90 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-	mode: 'development',
-	entry: './src/index.js',
-	devtool: 'inline-source-map',
-	devServer: {
-		static: './dist',
-		watchFiles: './src' 
-	},
-	plugins: [
-		new HtmlWebpackPlugin({
-			title: 'Output Management',
-			template: 'src/index.html'
-		}),
-	],
-	module: {
-		rules: [
-			{
-				test: /\.css$/i,
-				use: ['style-loader', 'css-loader'],
-			}
-		],
-	},
-	output: {
-		filename: '[name].bundle.js',
-		path: path.resolve(__dirname, 'dist'),
-		clean: true
-	}
+    mode: "development",
+    entry: {
+        homepage: "./src/index.jsx",
+        connect4: "./src/connect4.jsx",
+    },
+    devtool: "inline-source-map",
+    devServer: {
+        static: "./dist",
+        watchFiles: "./src",
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: "TYeung's homepage",
+            template: "src/index.html",
+            chunks: ["homepage"],
+        }),
+        new HtmlWebpackPlugin({
+            title: "TYeung's timetable",
+            template: "src/timetable.html",
+            filename: "timetable.html",
+            // add chunk here
+        }),
+        new HtmlWebpackPlugin({
+            title: "TYeung's connect four",
+            template: "src/connect4.html",
+            filename: "connect4.html",
+            chunks: ["connect4"],
+        }),
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.(scss)$/,
+                use: [
+                    {
+                        loader: "style-loader", // inject CSS to page
+                    },
+                    {
+                        loader: "css-loader", // translates CSS into CommonJS modules
+                    },
+                    {
+                        loader: "postcss-loader", // Run post css actions
+                        options: {
+                            postcssOptions: {
+                                plugins: function () {
+                                    // post css plugins, can be exported to postcss.config.js
+                                    return [
+                                        require("precss"),
+                                        require("autoprefixer"),
+                                    ];
+                                },
+                            },
+                        },
+                    },
+                    {
+                        loader: "sass-loader", // compiles Sass to CSS
+                    },
+                ],
+            },
+            {
+                test: /\.jsx$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ["@babel/preset-react", "@babel/preset-env"],
+                    },
+                },
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                type: "asset/resource",
+                generator: {
+                    filename: "image/[name][ext]", // development mode
+                },
+            },
+        ],
+    },
+    output: {
+        filename: "[name].bundle.js",
+        path: path.resolve(__dirname, "dist"),
+        clean: true,
+    },
 };
 
 console.log(__dirname);
