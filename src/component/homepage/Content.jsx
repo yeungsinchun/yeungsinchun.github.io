@@ -1,19 +1,55 @@
 import React from "react";
 import Card from "./Card.jsx";
+import "../../image/gametime.jpeg";
 
 const Content = () => {
     return (
-        <div className="container">
-            <div className="row justify-content-center text-center">
-                <Card
-                    title="Connect Four"
-                    bg="gametime.jpeg"
-                    goto="connect4.html"
-                />
-                <Card />
-                <Card />
+        <section className="section-custom">
+            <div className="container">
+                <div className="row justify-content-center text-center">
+                    <h2 className="section-title">
+                        <span className="section-title-content">
+                            My Applications
+                        </span>
+                    </h2>
+                    <Card
+                        title="Connect Four"
+                        bg="gametime.jpeg"
+                        goto="connect4.html"
+                    />
+                    <Card
+                        title="Computational Geometry Applet"
+                        bg="gametime.jpeg"
+                        goto="cgapplet.html"
+                    />
+                    <Card
+                        title="Connect Four"
+                        bg="gametime.jpeg"
+                        goto="connect4.html"
+                    />
+                    <Card
+                        title="Connect Four"
+                        bg="gametime.jpeg"
+                        goto="connect4.html"
+                    />
+                    <Card
+                        title="Connect Four"
+                        bg="gametime.jpeg"
+                        goto="connect4.html"
+                    />
+                    <Card
+                        title="Connect Four"
+                        bg="gametime.jpeg"
+                        goto="connect4.html"
+                    />
+                    <Card
+                        title="Connect Four"
+                        bg="gametime.jpeg"
+                        goto="connect4.html"
+                    />
+                </div>
             </div>
-        </div>
+        </section>
     );
 };
 

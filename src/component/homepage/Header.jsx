@@ -26,7 +26,7 @@ const Header = () => {
         <div className="header">
             <div className="container">
                 <div className="row">
-                    <div className="col-8">
+                    <div className="col-8 ps-5">
                         <div className="intro-name">
                             <span className="first-char">T</span>{" "}
                             <span className="first-char">Y</span>eung{" "}
@@ -34,11 +34,13 @@ const Header = () => {
                         <span className="intro" ref={el} />
                     </div>
                     <div className="col">
-                        <ul className="info">
-                            <li>https://codeforces.com/profile/TYeung</li>
-                            <li>scyeungaf@connect.ust.hk</li>
-                            <li>https://github.com/yeungsinchun</li>
-                        </ul>
+                        <div className="row align-items-center h-100">
+                            <ul className="info">
+                                <li>https://codeforces.com/profile/TYeung</li>
+                                <li>scyeungaf@connect.ust.hk</li>
+                                <li>https://github.com/yeungsinchun</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

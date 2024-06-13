@@ -1,8 +1,8 @@
 import React from "react";
-import Board from "./Board.jsx";
+import Game from "./Game.jsx";
 
 const App = () => {
-    return <Board />;
+    return <Game />;
 };
 
 export default App;
