@@ -9,7 +9,7 @@ const Header = () => {
             strings: [
                 "I am <span class='first-char'>T</span>Yeung, ",
                 "<span class='first-char'>C</span>omputer <span class='first-char'>S</span>cience student",
-                "<span class='first-char'>W</span>eb <span class='first-char'>D</span>eveloper",
+                "<span class='first-char'>C</span>ompetitive <span class='first-char'>P</span>rogrammer",
                 "<span class='first-char'>T</span>etris player",
             ],
             typeSpeed: 50,

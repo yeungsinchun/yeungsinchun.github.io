@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -72,6 +74,11 @@ module.exports = {
                 },
             },
             {
+                test: /\.tsx?$/,
+                exclude: /node_modules/,
+                use: "ts-loader",
+            },
+            {
                 test: /\.(png|jpe?g|gif)$/i,
                 type: "asset/resource",
                 generator: {
@@ -79,6 +86,9 @@ module.exports = {
                 },
             },
         ],
+    },
+    resolve: {
+        extensions: [".tsx", ".ts", ".js"],
     },
     output: {
         filename: "[name].bundle.js",
