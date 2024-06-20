@@ -11,6 +11,10 @@ const Header = () => {
                 "<span class='first-char'>C</span>omputer <span class='first-char'>S</span>cience student",
                 "<span class='first-char'>C</span>ompetitive <span class='first-char'>P</span>rogrammer",
                 "<span class='first-char'>T</span>etris player",
+                "<span class='first-char'>H</span>ate software development :(",
+                "<span class='first-char'>E</span>njoy theorectical CS",
+                "<span class='first-char'>W</span>orking on Connect-4 Solver",
+                "<span class='first-char'>L</span>earning about ZKP",
             ],
             typeSpeed: 50,
             loop: true,
@@ -26,19 +30,30 @@ const Header = () => {
         <div className="header">
             <div className="container">
                 <div className="row">
-                    <div className="col-8 ps-5">
-                        <div className="intro-name">
-                            <span className="first-char">T</span>{" "}
-                            <span className="first-char">Y</span>eung{" "}
+                    <div className="col justify-content-center d-flex">
+                        <div>
+                            <div className="intro-name">
+                                <span className="first-char">T</span>{" "}
+                                <span className="first-char">Y</span>eung{" "}
+                            </div>
+                            <span className="intro" ref={el} />
                         </div>
-                        <span className="intro" ref={el} />
                     </div>
-                    <div className="col">
-                        <div className="row align-items-center h-100">
-                            <ul className="info">
-                                <li>https://codeforces.com/profile/TYeung</li>
-                                <li>scyeungaf@connect.ust.hk</li>
-                                <li>https://github.com/yeungsinchun</li>
+                    <div className="col justify-content-center d-flex">
+                        <div className="row align-items-center h-100 m-0">
+                            <ul className="info m-0">
+                                <li>
+                                    <i className="fa-solid fa-code fa-fw"></i>
+                                    &nbsp; https://codeforces.com/profile/TYeung
+                                </li>
+                                <li>
+                                    <i class="fa-regular fa-envelope fa-fw"></i>
+                                    &nbsp; scyeungaf@connect.ust.hk
+                                </li>
+                                <li>
+                                    <i class="fa-brands fa-github fa-fw"></i>
+                                    &nbsp; https://github.com/yeungsinchun
+                                </li>
                             </ul>
                         </div>
                     </div>

@@ -37,7 +37,7 @@ body {
 
 .header {
 	background: none;
-	min-height: 40vh;
+	min-height: 20vh;
 	width: 100vw;
 	display: flex;
 	align-items: center;
@@ -45,6 +45,9 @@ body {
 		color: black;
 		font-size: 5rem;
 		text-shadow: 2px 2px white;
+	}
+	.info {
+		list-style-type: none;
 	}
 	.intro {
 		margin-left: 1rem;

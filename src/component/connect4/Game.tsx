@@ -252,6 +252,7 @@ function Game() {
     }
     function jumpTo(nextMove: number) {
         setCurrentMove(nextMove);
+        setTempBoard(history[nextMove]);
     }
     const moves: React.ReactElement[] = history.map((squares, move) => {
         let description;
