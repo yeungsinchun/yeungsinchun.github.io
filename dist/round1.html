@@ -17,9 +17,9 @@
         .container {
             margin: auto;
             display: flex;
+            justify-content: center;
             height: 100vh;
         }
-
         iframe {
             width: 100vw;
             transform: scale(0.25);
@@ -52,30 +52,24 @@
             <div class="cutter" id="cutter2">
                 <iframe name="iframe2" id="iframe2"
                     src="https://challonge.com/4umm4zaa/module?show_tournament_name=1&match_width_multiplier=1.0&theme=2"
-                    height="400%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+                    height="20000" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
             </div>
         </div>
         <div class="wrap">
             <div class="cutter" id="cutter3">
                 <iframe name="iframe3" id="iframe3"
                     src="https://challonge.com/4umm4zaa/module?show_tournament_name=1&match_width_multiplier=1.0&theme=2"
-                    height="400%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-            </div>
-        </div>
-        <div class="wrap">
-            <div class="cutter" id="cutter4">
-                <iframe name="iframe4" id="iframe4"
-                    src="https://challonge.com/4umm4zaa/module?show_tournament_name=1&match_width_multiplier=1.0&theme=2"
-                    height="400%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+                    height="20000" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
             </div>
         </div>
     </div>
     <script>
+        let vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
         let cutter2 = document.getElementById("cutter2");
-        cutter2.scrollTop = 352;
+        cutter2.scrollTop = vh;
         let cutter3 = document.getElementById("cutter3");
-        cutter3.scrollTop = 704;
+        cutter3.scrollTop = vh * 2;
         let cutter4 = document.getElementById("cutter4");
-        cutter4.scrollTop = 1056;
+        cutter4.scrollTop = vh * 3;
     </script>
 </html>
