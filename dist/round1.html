@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>繩研盃測試</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <style>
+        body {
+            margin: 0;
+            background-color: #252830;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            margin: auto;
+            display: flex;
+            height: 100vh;
+        }
+
+        iframe {
+            width: 100vw;
+            transform: scale(0.25);
+            transform-origin: 0 0;
+        }
+
+        .wrap {
+            width: 25vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .cutter {
+            height: 1700px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrap">
+            <div class="cutter" id="cutter1">
+                <iframe name="iframe1" id="iframe1"
+                    src="https://challonge.com/4umm4zaa/module?show_tournament_name=1&match_width_multiplier=1.0&theme=2"
+                    height="20000" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="cutter" id="cutter2">
+                <iframe name="iframe2" id="iframe2"
+                    src="https://challonge.com/4umm4zaa/module?show_tournament_name=1&match_width_multiplier=1.0&theme=2"
+                    height="400%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="cutter" id="cutter3">
+                <iframe name="iframe3" id="iframe3"
+                    src="https://challonge.com/4umm4zaa/module?show_tournament_name=1&match_width_multiplier=1.0&theme=2"
+                    height="400%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="cutter" id="cutter4">
+                <iframe name="iframe4" id="iframe4"
+                    src="https://challonge.com/4umm4zaa/module?show_tournament_name=1&match_width_multiplier=1.0&theme=2"
+                    height="400%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+            </div>
+        </div>
+    </div>
+    <script>
+        let cutter2 = document.getElementById("cutter2");
+        cutter2.scrollTop = 352;
+        let cutter3 = document.getElementById("cutter3");
+        cutter3.scrollTop = 704;
+        let cutter4 = document.getElementById("cutter4");
+        cutter4.scrollTop = 1056;
+    </script>
+</html>
