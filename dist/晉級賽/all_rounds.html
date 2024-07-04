@@ -22,7 +22,7 @@
       height: 8000px;
       overflow-y: hidden;
     }
-    
+
     iframe {
       padding-left: 20px;
       padding-right: 20px;
@@ -36,10 +36,25 @@
       display: flex;
       justify-content: center;
     }
-    
+
     .wrapper2 {
       height: 90vh;
       overflow-y: hidden;
+    }
+
+    .iframe-holder {
+      background-image: url(load.gif);
+      background-size: 150px;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+    }
+
+    iframe {
+                  opacity: 0;
+                  transition-duration: 300ms;
+                  transition-property: opacity;
+                  transition-timing-function: ease-in-out;
     }
   </style>
 </head>
@@ -47,67 +62,79 @@
 <body>
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#R1-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">晉級賽R1</button>
+      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#R1-tab-pane" type="button"
+        role="tab" aria-controls="round1-tab" aria-selected="true">晉級賽R1</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#R2-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">晉級賽R2</button>
+      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#R2-tab-pane" type="button"
+        role="tab" aria-controls="round2-tab" aria-selected="false">晉級賽R2</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#R3-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">晉級賽R3</button>
+      <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#R3-tab-pane" type="button"
+        role="tab" aria-controls="round3-tab" aria-selected="false">晉級賽R3</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#R4-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">晉級賽R4</button>
+      <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#R4-tab-pane" type="button"
+        role="tab" aria-controls="round4-tab" aria-selected="false">晉級賽R4</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#R5-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">晉級賽Final</button>
+      <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#R5-tab-pane" type="button"
+        role="tab" aria-controls="round5-tab" aria-selected="false">晉級賽Final</button>
     </li>
   </ul>
-    <div class="tab-pane fade" id="R1-tab-pane" role="tabpanel" aria-labelledby="round1-tab" tabindex="0">
-        <div class="col">
-          <div class="wrapper">
-                <iframe name="R1" id="R1"
-                  src="https://challonge.com/4umm4zaa/module?show_tournament_name=1&match_width_multiplier=1.0&theme=2" 
-                  width="100%" height="20000" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
-          </div>
+
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="R1-tab-pane" role="tabpanel" aria-labelledby="round1-tab" tabindex="0">
+      <div class="col">
+        <div class="wrapper iframe-holder">
+            <iframe name="R1" id="R1" fetchpriority="high"
+              onload="this.style.opacity = '1';"
+              src="https://challonge.com/4umm4zaa/module?show_tournament_name=1&match_width_multiplier=1.0&theme=2" 
+              width="100%" height="10000" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
         </div>
+      </div>
     </div>
     <div class="tab-pane fade" id="R2-tab-pane" role="tabpanel" aria-labelledby="round2-tab" tabindex="0">
-        <div class="col">
-          <div class="wrapper">
-            <iframe name="R2" id="R2"
+      <div class="col">
+        <div class="wrapper iframe-holder">
+            <iframe name="R2" id="R2" loading="lazy"
+              onload="this.style.opacity = '1';"
               src="https://challonge.com/hexuhdqr/module?show_tournament_name=1&match_width_multiplier=0.5&theme=2"
-              width="100%" height="10000" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-          </div>
+              width="100%" height="10000" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
         </div>
+      </div>
     </div>
     <div class="tab-pane fade" id="R3-tab-pane" role="tabpanel" aria-labelledby="round3-tab" tabindex="0">
-        <div class="col">
-          <div class="wrapper">
-            <iframe name="R3" id="R3"
-              src="https://challonge.com/o853iov2/module?show_tournament_name=1&match_width_multiplier=0.5&theme=2" width="600"
-              width="100%" height="10000" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-          </div>
+      <div class="col">
+        <div class="wrapper iframe-holder">
+            <iframe name="R3" id="R3" loading="lazy"
+              onload="this.style.opacity = '1';"
+              src="https://challonge.com/o853iov2/module?show_tournament_name=1&match_width_multiplier=0.5&theme=2"
+              width="100%" height="10000" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
         </div>
+      </div>
     </div>
     <div class="tab-pane fade" id="R4-tab-pane" role="tabpanel" aria-labelledby="round4-tab" tabindex="0">
-        <div class="col">
-          <div class="wrapper">
-            <iframe name="R4" id="R4"
+      <div class="col">
+        <div class="wrapper iframe-holder">
+            <iframe name="R4" id="iframe4" loading="lazy"
+              onload="this.style.opacity = '1';"
               src="https://challonge.com/qckddgkf/module?show_tournament_name=1&match_width_multiplier=0.5&theme=2"
               width="100%" height="10000" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-          </div>
         </div>
+      </div>
     </div>
     <div class="tab-pane fade" id="R5-tab-pane" role="tabpanel" aria-labelledby="round5-tab" tabindex="0">
-        <div class="col">
-          <div class="wrapper2">
-            <div class="center">
-              <iframe name="R5" id="R5"
-                  src="https://challonge.com/3tfvnm6j/module?show_tournament_name=1&match_width_multiplier=1.0&scale_to_fit=1&theme=2"
-                  width="60%" height="10000" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-            </div>
+      <div class="col">
+        <div class="wrapper2">
+          <div class="center iframe-holder">
+            <iframe name="R5" id="iframe5" loading="lazy"
+              onload="this.style.opacity = '1';"
+              src="https://challonge.com/3tfvnm6j/module?show_tournament_name=1&match_width_multiplier=1.0&scale_to_fit=1&theme=2"
+              width="60%" height="10000" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
           </div>
         </div>
+      </div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
