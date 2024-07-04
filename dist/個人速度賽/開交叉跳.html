@@ -1,0 +1,232 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width">
+  <title>雙腳跳</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #252830;
+      opacity: 0.97
+    }
+
+    .nav-link:hover {
+      color: white;
+    }
+
+    .container {
+      margin: auto;
+      display: flex;
+      height: 100vh;
+      padding: 0;
+    }
+
+    .wrapper {
+      height: 6700px;
+      overflow-y: hidden;
+    }
+
+    iframe {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .nav-link {
+      color: white;
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+    }
+
+    .wrapper2 {
+      height: 90vh;
+      overflow-y: hidden;
+    }
+
+    .iframe-holder {
+      background-image: url(load.gif);
+      background-size: 150px;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+    }
+
+    iframe {
+      opacity: 0;
+      transition-duration: 300ms;
+      transition-property: opacity;
+      transition-timing-function: ease-in-out;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="6-8-M-tab" data-bs-toggle="tab" data-bs-target="#6-8-M-tab-pane" type="button"
+        role="tab" aria-controls="6-8-M-tab" aria-selected="true">6-8歲男</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="6-8-F-tab" data-bs-toggle="tab" data-bs-target="#6-8-F-tab-pane" type="button"
+        role="tab" aria-controls="6-8-F-tab" aria-selected="false">6-8歲女</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="9-10-M-tab" data-bs-toggle="tab" data-bs-target="#9-10-M-tab-pane" type="button"
+        role="tab" aria-controls="9-10-M-tab" aria-selected="false">9-10歲男</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="9-10-F-tab" data-bs-toggle="tab" data-bs-target="#9-10-F-tab-pane" type="button"
+        role="tab" aria-controls="9-10-F-tab" aria-selected="false">9-10歲女</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="11-12-M-tab" data-bs-toggle="tab" data-bs-target="#11-12-M-tab-pane" type="button"
+        role="tab" aria-controls="11-12-M-tab" aria-selected="false">11-12歲男</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="11-12-F-tab" data-bs-toggle="tab" data-bs-target="#11-12-F-tab-pane" type="button"
+        role="tab" aria-controls="11-12-F-tab" aria-selected="false">11-12歲女</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="13-14-M-tab" data-bs-toggle="tab" data-bs-target="#13-14-M-tab-pane" type="button"
+        role="tab" aria-controls="13-14-M-tab" aria-selected="false">13-14歲男</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="13-14-F-tab" data-bs-toggle="tab" data-bs-target="#13-14-F-tab-pane" type="button"
+        role="tab" aria-controls="13-14-F-tab" aria-selected="false">13-14歲女</button>
+    </li>
+    <button class="nav-link" id="15-16-M-tab" data-bs-toggle="tab" data-bs-target="#15-16-M-tab-pane" type="button"
+      role="tab" aria-controls="15-16-M-tab" aria-selected="false">15-16歲男</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="15-16-F-tab" data-bs-toggle="tab" data-bs-target="#15-16-F-tab-pane" type="button"
+        role="tab" aria-controls="15-16-F-tab" aria-selected="false">15-16歲女</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="17-18-M-tab" data-bs-toggle="tab" data-bs-target="#17-18-M-tab-pane" type="button"
+        role="tab" aria-controls="17-18-M-tab" aria-selected="false">17-18歲男</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="17-18-F-tab" data-bs-toggle="tab" data-bs-target="#17-18-F-tab-pane" type="button"
+        role="tab" aria-controls="17-18-F-tab" aria-selected="false">17-18歲女</button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="6-8-M-tab-pane" role="tabpanel" aria-labelledby="6-8-M-tab" tabindex="0">
+      <div class="col">
+        <div class="wrapper iframe-holder">
+          <iframe name="6-8-M" id="6-8-M" fetchpriority="high" onload="this.style.opacity = '1';"
+            src="https://challonge.com/ind8vwwq/module?show_tournament_name=1&match_width_multiplier=1.0&theme=2"
+            width="100%" height="10000" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="6-8-F-tab-pane" role="tabpanel" aria-labelledby="6-8-F-tab" tabindex="0">
+      <div class="col">
+        <div class="wrapper iframe-holder">
+          <iframe name="6-8-F" id="6-8-F" loading="lazy" onload="this.style.opacity = '1';"
+            src="https://challonge.com/z6wdlkw3/module?show_tournament_name=1&match_width_multiplier=0.5&theme=2"
+            width="100%" height="10000" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="9-10-M-tab-pane" role="tabpanel" aria-labelledby="9-10-M-tab" tabindex="0">
+      <div class="col">
+        <div class="wrapper iframe-holder">
+          <iframe name="9-10-M" id="9-10-M" loading="lazy" onload="this.style.opacity = '1';"
+            src="https://challonge.com/43vzqu30/module?show_tournament_name=1&match_width_multiplier=0.5&theme=2"
+            width="100%" height="10000" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="9-10-F-tab-pane" role="tabpanel" aria-labelledby="9-10-F-tab" tabindex="0">
+      <div class="col">
+        <div class="wrapper iframe-holder">
+          <iframe name="9-10-F" id="9-10-F" loading="lazy" onload="this.style.opacity = '1';"
+            src="https://challonge.com/u4zwwrfe/module?show_tournament_name=1&match_width_multiplier=0.5&theme=2"
+            width="100%" height="10000" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="11-12-M-tab-pane" role="tabpanel" aria-labelledby="11-12-M-tab" tabindex="0">
+      <div class="col">
+        <div class="wrapper iframe-holder">
+          <iframe name="11-12-M" id="11-12-M" loading="lazy" onload="this.style.opacity = '1';"
+            src="https://challonge.com/wsj88kpi/module?show_tournament_name=1&match_width_multiplier=0.5&theme=2"
+            width="100%" height="10000" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="11-12-F-tab-pane" role="tabpanel" aria-labelledby="11-12-F-tab" tabindex="0">
+      <div class="col">
+        <div class="wrapper iframe-holder">
+          <iframe name="11-12-F" id="11-12-F" loading="lazy" onload="this.style.opacity = '1';"
+            src="https://challonge.com/jhzyfmk4/module?show_tournament_name=1&match_width_multiplier=0.5&theme=2"
+            width="100%" height="10000" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="13-14-M-tab-pane" role="tabpanel" aria-labelledby="13-14-M-tab" tabindex="0">
+      <div class="col">
+        <div class="wrapper iframe-holder">
+          <iframe name="13-14-M" id="13-14-M" loading="lazy" onload="this.style.opacity = '1';"
+            src="https://challonge.com/isd05rxa/module?show_tournament_name=1&match_width_multiplier=0.5&theme=2"
+            width="100%" height="10000" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="13-14-F-tab-pane" role="tabpanel" aria-labelledby="13-14-F-tab" tabindex="0">
+      <div class="col">
+        <div class="wrapper iframe-holder">
+          <iframe name="13-14-F" id="13-14-F" loading="lazy" onload="this.style.opacity = '1';"
+            src="https://challonge.com/p84ybn2a/module?show_tournament_name=1&match_width_multiplier=0.5&theme=2"
+            width="100%" height="10000" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="15-16-M-tab-pane" role="tabpanel" aria-labelledby="15-16-M-tab" tabindex="0">
+      <div class="col">
+        <div class="wrapper iframe-holder">
+          <iframe name="15-16-M" id="15-16-M" loading="lazy" onload="this.style.opacity = '1';"
+            src="https://challonge.com/94vcd7jq/module?show_tournament_name=1&match_width_multiplier=0.5&theme=2"
+            width="100%" height="10000" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="15-16-F-tab-pane" role="tabpanel" aria-labelledby="15-16-F-tab" tabindex="0">
+      <div class="col">
+        <div class="wrapper iframe-holder">
+          <iframe name="15-16-F" id="15-16-F" loading="lazy" onload="this.style.opacity = '1';"
+            src="https://challonge.com/p5cworcq/module?show_tournament_name=1&match_width_multiplier=0.5&theme=2"
+            width="100%" height="10000" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="17-18-M-tab-pane" role="tabpanel" aria-labelledby="17-18-M-tab" tabindex="0">
+      <div class="col">
+        <div class="wrapper iframe-holder">
+          <iframe name="17-18-M" id="17-18-M" loading="lazy" onload="this.style.opacity = '1';"
+            src="https://challonge.com/f274hwtv/module?show_tournament_name=1&match_width_multiplier=0.5&theme=2"
+            width="100%" height="10000" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="17-18-F-tab-pane" role="tabpanel" aria-labelledby="17-18-F-tab" tabindex="0">
+      <div class="col">
+        <div class="wrapper iframe-holder">
+          <iframe name="17-18-F" id="17-18-F" loading="lazy" onload="this.style.opacity = '1';"
+            src="https://challonge.com/dgu6w84r/module?show_tournament_name=1&match_width_multiplier=0.5&theme=2"
+            width="100%" height="10000" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+</html>
