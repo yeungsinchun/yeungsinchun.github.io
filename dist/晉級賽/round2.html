@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width">
-    <title>晉級賽Round 2名次</title>
+    <title>繩研盃測試</title>
     <style>
         body {
             margin: 0;
@@ -11,22 +11,26 @@
             height: 100vh;
             overflow: hidden;
         }
+
         .container {
             margin: auto;
             display: flex;
             justify-content: center;
             height: 100vh;
         }
+
         iframe {
             width: 100vw;
-            transform: scale(0.4);
+            transform: scale(0.25);
             transform-origin: 0 0;
         }
+
         .wrap {
-            width: 40vw;
+            width: 25vw;
             height: 100vh;
             overflow: hidden;
         }
+
         .cutter {
             height: 1700px;
             overflow: hidden;
@@ -40,7 +44,7 @@
             <div class="cutter" id="cutter1">
                 <iframe name="iframe1" id="iframe1"
                     src="https://challonge.com/hexuhdqr/module?show_tournament_name=1&match_width_multiplier=1.0&theme=2"
-                    height="20000" frameborder="0" scrolling="auto" frameborder="0" allowtransparency="true"></iframe>
+                    height="20000" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
             </div>
         </div>
         <div class="wrap">
@@ -50,10 +54,29 @@
                     height="20000" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
             </div>
         </div>
+        <div class="wrap">
+            <div class="cutter" id="cutter3">
+                <iframe name="iframe3" id="iframe3"
+                    src="https://challonge.com/hexuhdqr/module?show_tournament_name=1&match_width_multiplier=1.0&theme=2"
+                    height="20000" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="cutter" id="cutter4">
+                <iframe name="iframe4" id="iframe4"
+                    src="https://challonge.com/hexuhdqr/module?show_tournament_name=1&match_width_multiplier=1.0&theme=2"
+                    height="20000" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+            </div>
+        </div>
     </div>
     <script>
-        let vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-        let cutter2 = document.getElementById("cutter2");
-        cutter2.scrollTop = vh;
+                let vh = math.max(document.documentelement.clientheight || 0, window.innerheight || 0)
+                let cutter2 = document.getelementbyid("cutter2");
+                cutter2.scrolltop = vh;
+                let cutter3 = document.getelementbyid("cutter3");
+                cutter3.scrolltop = vh * 2;
+                let cutter4 = document.getelementbyid("cutter4");
+                cutter4.scrolltop = vh * 3;
     </script>
+
 </html>
