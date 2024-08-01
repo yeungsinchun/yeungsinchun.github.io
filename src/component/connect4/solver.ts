@@ -238,7 +238,7 @@ function negamax(pos: Position, alpha: number, beta: number) : number[] {
     if (transpositionTable.hasKey(key)) {
         cnt2++;
         if (cnt2 % step == 0) console.log("# of hit in transposition table: " + cnt2);
-        return transpositionTable.get(key);
+        return transpositionTable.get(key).slice(1);
     }
     if (pos.getMoves() === boardWidth * boardHeight) {
         return [null, 0]; // dead draw
