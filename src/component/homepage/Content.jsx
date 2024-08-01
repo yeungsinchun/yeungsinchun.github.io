@@ -4,7 +4,7 @@ import Card from "./Card.jsx";
 const Content = () => {
     return (
         <>
-            <div className="container">
+            <div className="container content">
                 <div className="row">
                     <div className="col">
                         <div

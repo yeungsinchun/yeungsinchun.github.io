@@ -7,7 +7,7 @@ const App = () => {
     return (
         <>
             <Header />
-            <hr />
+            <hr className="separate"/>
             <Content />
         </>
     );
