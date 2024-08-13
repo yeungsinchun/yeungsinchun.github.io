@@ -106,7 +106,9 @@ class Position {
     }
     public isWinningMove(col: number) {
         let temp : Position = this.clone();
+        temp.logContent();
         temp.play(col);
+        temp.logContent();
         let res = Position.alignment(temp.position ^ temp.mask);
         return res;
     }
@@ -187,8 +189,8 @@ class Position {
             }
         }
         this.moves = x + o;
-        let last = x >= o ? 'X' : 'O';
-        let next = x >= o ? 'O' : 'X';
+        let last = x >= o ? 'O' : 'X';
+        let next = x >= o ? 'X' : 'O';
         for (let i = 0n; i < boardHeightBigInt; i++) {
             for (let j = 0n ; j < boardWidthBigInt; j++) {
                 if (pos[Number(i)][Number(j)] == last) {

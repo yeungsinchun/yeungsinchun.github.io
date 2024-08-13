@@ -347,8 +347,13 @@ function Game() {
     return (
         <div className="game-region">
             <div className="alert-area container">{alerts}</div>
-            <div className="form-check form-switch">
-                <button type="button" className="btn-ai btn btn-primary" onClick={() => playComputerMove()} disabled={pos.getMoves() < 15 || winner}>AI move (enable after move 15)</button>
+            <div className="ai-region">
+                <div>
+                    <button type="button" className="btn-ai btn btn-primary" onClick={() => playComputerMove()} disabled={pos.getMoves() > 10 || winner}>AI move (enable after move 10)*</button>
+                </div>
+                <div className="ai-disclaimer">
+                    *: The solver is currently not fast enough to solve anything beyond that
+                </div>
             </div>
             <Board
                 content={tempBoard}

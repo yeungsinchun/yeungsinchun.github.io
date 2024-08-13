@@ -91,10 +91,19 @@ $red-mute : rgba(23, 154, 143, 0.2); /* blue (Y) */
     margin-bottom: 10px;
 }
 
-.form-check {
+.ai-region {
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
 }
 
 .board-container {
     position: relative;
+}
+
+.ai-disclaimer {
+    font-size: 8;
+    text-align: center;
 }
