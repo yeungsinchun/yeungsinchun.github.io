@@ -333,6 +333,9 @@ declare global {
         bestMove: any;
     }
 }
+
+// For debug:
+
 window.test1 = test1;
 window.test2 = test2;
 window.test3 = test3;

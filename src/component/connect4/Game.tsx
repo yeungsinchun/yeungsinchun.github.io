@@ -349,12 +349,14 @@ function Game() {
             } else {
                 setWinningMsg((pos.getTurn() % 2 == 0 ? 'Blue' : 'Red') + ' will win in ' + (boardHeight * boardWidth - res1 - pos.getMoves() - 1).toString() + ' moves');
             }
-        } else {
+        } else if (res1 < 0) {
             if ((boardHeight * boardWidth - res1 - pos.getMoves() - 1) === 0) {
                 setWinningMsg((pos.getTurn() % 2 == 0 ? 'Red' : 'Blue') + ' won');
             } else {
                 setWinningMsg((pos.getTurn() % 2 == 0 ? 'Red' : 'Blue') + ' will win in ' + (boardHeight * boardWidth + res1 - pos.getMoves() - 1).toString() + ' moves');
             }
+        } else {
+            setWinningMsg("Draw in " + (boardHeight * boardWidth + res1 - pos.getMoves() - 1).toString() + " moves")
         }
         play(res0);
     };
