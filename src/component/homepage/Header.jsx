@@ -31,7 +31,7 @@ const Header = () => {
             <div className="container">
                 <div className="row">
                     <div className="col justify-content-center d-flex">
-                        <div>
+                        <div className="name-center">
                             <div className="intro-name">
                                 <span className="first-char">T</span>{" "}
                                 <span className="first-char">Y</span>eung{" "}

@@ -348,7 +348,7 @@ function Game() {
         <div className="game-region">
             <div className="alert-area container">{alerts}</div>
             <div className="form-check form-switch">
-                <button type="button" className="btn-ai btn btn-primary" onClick={() => playComputerMove()} disabled={pos.getMoves() < 10 || winner}>AI move (enable after move 10)</button>
+                <button type="button" className="btn-ai btn btn-primary" onClick={() => playComputerMove()} disabled={pos.getMoves() < 15 || winner}>AI move (enable after move 15)</button>
             </div>
             <Board
                 content={tempBoard}

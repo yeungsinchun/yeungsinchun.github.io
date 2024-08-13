@@ -1,14 +1,16 @@
 import React from "react";
 import gametime from "../../image/gametime.jpeg";
+import connect4 from "../../image/connect4.png";
 
 const linkToImg = {
-    "../../image/gametime.jpeg": gametime,
+    "gametime": gametime,
+    "connect4": connect4
 };
 
 const Card = ({ title, bg, goto, text }) => {
     return (
         <div className="fade-in-down card card-custom">
-            <img className="card-img-top" src={gametime} alt="Card image cap" />
+            <img className="card-img-top" src={linkToImg[bg]} alt="Card image cap" />
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
                 {text}

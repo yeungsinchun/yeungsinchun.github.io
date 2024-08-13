@@ -25,19 +25,19 @@ const Content = () => {
                                     </span>
                                     <Card
                                         title="Connect Four With Optimal A.I."
-                                        bg="gametime"
+                                        bg="connect4"
                                         goto="connect4.html"
                                         text="Get four in a row to win the game! Try to play with an unbeatable A.I. running alpha-beta pruning!"
                                     />
                                     <Card
                                         title="Computational Geometry Applet"
-                                        bg="gametime.jpeg"
+                                        bg="gametime"
                                         goto="cgapplet.html"
                                         text="Computational Geometry Applet under development"
                                     />
                                     <Card
                                         title="Tetris"
-                                        bg="gametime.jpeg"
+                                        bg="gametime"
                                         goto="cgapplet.html"
                                         text="Tetris game under development"
                                     />
@@ -58,12 +58,12 @@ const Content = () => {
                                     />
                                     <Card
                                         title="Codeforces writeups"
-                                        bg="gametime.jpeg"
+                                        bg="gametime"
                                         goto="cgapplet.html"
                                     />
                                     <Card
                                         title="Placeholder"
-                                        bg="gametime.jpeg"
+                                        bg="gametime"
                                         goto="cgapplet.html"
                                     />
                                 </div>
@@ -86,19 +86,19 @@ const Content = () => {
                                     />
                                     <Card
                                         title="Placeholder"
-                                        bg="gametime.jpeg"
+                                        bg="gametime"
                                         goto="cgapplet.html"
                                     />
                                     <Card
                                         title="Placeholder"
-                                        bg="gametime.jpeg"
+                                        bg="gametime"
                                         goto="cgapplet.html"
                                     />
                                 </div>
                             </section>
                         </div>
                     </div>
-                    <div className="col-3 d-none d-md-block">
+                    {/*<div className="col-3 d-none d-md-block">
                         <div
                             className="list-group sticky-top p-2 list-group-flush"
                             id="list-example"
@@ -123,6 +123,7 @@ const Content = () => {
                             </a>
                         </div>
                     </div>
+                    */}
                 </div>
             </div>
         </>
