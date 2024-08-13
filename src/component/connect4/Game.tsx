@@ -340,19 +340,36 @@ function Game() {
             setWinner(_winner);
         }
     }
+    const [winningMsg, setWinningMsg] = useState("Click the AI Button to know who is winning!");
     function playComputerMove () {
-        let res = bestMove(pos);
-        play(res);
+        let [res0, res1] = bestMove(pos);
+        if (res1 > 0) {
+            if ((boardHeight * boardWidth - res1 - pos.getMoves() - 1) === 0) {
+                setWinningMsg((pos.getTurn() % 2 == 0 ? 'Blue' : 'Red') + ' won');
+            } else {
+                setWinningMsg((pos.getTurn() % 2 == 0 ? 'Blue' : 'Red') + ' will win in ' + (boardHeight * boardWidth - res1 - pos.getMoves() - 1).toString() + ' moves');
+            }
+        } else {
+            if ((boardHeight * boardWidth - res1 - pos.getMoves() - 1) === 0) {
+                setWinningMsg((pos.getTurn() % 2 == 0 ? 'Red' : 'Blue') + ' won');
+            } else {
+                setWinningMsg((pos.getTurn() % 2 == 0 ? 'Red' : 'Blue') + ' will win in ' + (boardHeight * boardWidth + res1 - pos.getMoves() - 1).toString() + ' moves');
+            }
+        }
+        play(res0);
     };
     return (
         <div className="game-region">
             <div className="alert-area container">{alerts}</div>
             <div className="ai-region">
                 <div>
-                    <button type="button" className="btn-ai btn btn-primary" onClick={() => playComputerMove()} disabled={pos.getMoves() < 10 || winner}>AI move (enable after move 10)*</button>
+                    <button type="button" className="btn-ai btn btn-primary" onClick={() => playComputerMove()} disabled={winner}>AI move (enable after move 10)*</button>
+                </div>
+                <div>
+                    {winningMsg}
                 </div>
                 <div className="ai-disclaimer">
-                    *: The solver is currently not fast enough to solve anything beyond that
+                    *: The solver is very slow at solving games with less than 15 moves
                 </div>
             </div>
             <Board

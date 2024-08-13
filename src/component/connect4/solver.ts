@@ -106,9 +106,7 @@ class Position {
     }
     public isWinningMove(col: number) {
         let temp : Position = this.clone();
-        temp.logContent();
         temp.play(col);
-        temp.logContent();
         let res = Position.alignment(temp.position ^ temp.mask);
         return res;
     }
@@ -179,24 +177,26 @@ class Position {
     public setContent(pos: string[][]) {
         pos.reverse();
         let x = 0, o = 0;
-        for (let i = 0n; i < boardHeightBigInt; i++) {
-            for (let j = 0n ; j < boardWidthBigInt; j++) {
-                if (pos[Number(i)][Number(j)] == "X") {
+        for (let i = 0; i < boardHeight; i++) {
+            for (let j = 0 ; j < boardWidth; j++) {
+                if (pos[i][j] == "X") {
                     x++;
-                } else if (pos[Number(i)][Number(j)] == "O") {
+                } else if (pos[i][j] == "O") {
                     o++;
                 }
             }
         }
         this.moves = x + o;
-        let last = x >= o ? 'O' : 'X';
-        let next = x >= o ? 'X' : 'O';
+        this.position = 0n;
+        this.mask = 0n;
+        let last = x > o ? 'X' : 'O';
+        let next = x <= o ? 'X' : 'O';
         for (let i = 0n; i < boardHeightBigInt; i++) {
             for (let j = 0n ; j < boardWidthBigInt; j++) {
                 if (pos[Number(i)][Number(j)] == last) {
                     this.mask |= (1n << i) << ((boardHeightBigInt + 1n) * j);
-                    this.position |= (1n << i) << ((boardHeightBigInt + 1n) * j);
                 } else if (pos[Number(i)][Number(j)] == next) {
+                    this.position |= (1n << i) << ((boardHeightBigInt + 1n) * j);
                     this.mask |= (1n << i) << ((boardHeightBigInt + 1n) * j);
                 }
             }
@@ -279,10 +279,7 @@ function negamax(pos: Position, alpha: number, beta: number) : number[] {
 
 function bestMove(pos: Position) {
     let res = negamax(pos, -Infinity, Infinity);
-    console.log("best move: " + res[0]);
-    console.log("score: " + res[1].toString());
-    console.log((pos.getTurn() % 2 == 0 ? 'X' : 'O') + ' will win in ' + (boardHeight * boardWidth - res[1] - pos.getMoves()).toString() + ' moves');
-    return res[0];
+    return [res[0], res[1]];
 }
 
 // All test has to be valid assuming X goes first
