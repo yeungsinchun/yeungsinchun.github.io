@@ -77,6 +77,7 @@ class Position {
     public clear() {
         this.position = 0n;
         this.mask = 0n;
+        this.moves = 0;
     }
     public canPlay(col: number): boolean {
         return (this.mask & Position.topMask(col)) === 0n;
@@ -233,6 +234,7 @@ let cnt = 0;
 let cnt2 = 0;
 let step = 100000;
 
+// search for a score in the window [alpha, beta]
 function negamax(pos: Position, alpha: number, beta: number) : number[] {
     cnt++;
     if (cnt % step == 0) console.log("# of iteration: " + cnt);
@@ -253,19 +255,19 @@ function negamax(pos: Position, alpha: number, beta: number) : number[] {
     let theoryBestScore = boardWidth * boardHeight - pos.getMoves();
     if (beta > theoryBestScore) {
         beta = theoryBestScore;
-        if (alpha >= beta) return [null, beta]; // both alpha and beta is ok; will be pruned anyway
     }
-    let bestScore = -Infinity;
+    // if (alpha >= beta) return [null, Infinity]; // this path should be pruned
+    let bestScore = -100;
     let best;
-    let next = pos.possibleNonLosingMove();
+    // let next = pos.possibleNonLosingMove();
     let order = pos.getMoveOrder();
     for (let i = 0; i < order.length; i++) {
         let x = order[i];
-        if (next & Position.columnMask(x) ) {
+        if (Position.columnMask(x) ) {
             let newPos = pos.clone();
             newPos.play(x);
             let score: number = -negamax(newPos, -beta, -alpha)[1]; // the window becomes [-beta, -alpha]
-            if (score >= beta) return [x, score];
+            if (score >= beta) return [null, Infinity]; // this path should be pruned
             if (score > alpha) alpha = score;
             if (score > bestScore) {
                 bestScore = score; // can be replaced by alpha
@@ -325,11 +327,30 @@ function test3() {
     return negamax(pos, -Infinity, Infinity);
 }
 
+function test4() {
+    pos.clear();
+    pos.setContent([
+        ['O', ' ', ' ', ' ', ' ', ' ', 'O'],
+        ['X', ' ', ' ', 'X', ' ', ' ', 'X'],
+        ['O', ' ', ' ', 'O', ' ', ' ', 'O'],
+        ['X', ' ', ' ', 'X', ' ', ' ', 'X'],
+        ['O', ' ', ' ', 'O', ' ', ' ', 'O'],
+        ['X', 'X', 'O', 'X', 'O', 'X', 'X']
+    ]);
+    for (let i = 0; i < 7; i++) {
+        console.log(Position.columnMask(i) & pos.possibleNonLosingMove());
+    }
+    pos.logContent();
+    return negamax(pos, -Infinity, Infinity);
+}
+
+
 declare global {
     interface Window {
         test1: any;
         test2: any;
         test3: any;
+        test4: any;
         bestMove: any;
     }
 }
@@ -339,6 +360,7 @@ declare global {
 window.test1 = test1;
 window.test2 = test2;
 window.test3 = test3;
+window.test4 = test4;
 window.bestMove = bestMove;
 
 export { pos, negamax, bestMove };
